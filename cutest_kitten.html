@@ -1,11 +1,25 @@
 <!DOCTYPE>
 <html lang="en">
+<link rel="stylesheet" type="text/css" href="style.css">
   <head>
     <meta charset="UTF-8">
     <title>Cutest Kitten Pagent</title>
+    <script src="Chart.min.js"></script>
   </head>
   <body>
-    <div id="pic-container"></div>
+    <div class="container" id="content-wrapper">
+      <h2>Vote on your favorite cat photo!</h2>
+      <br>
+      <br>
+      <br>
+      <div id="pic-container">
+        <div id="pic-container-1"></div>
+        <div id="pic-container-2"></div>
+      </div>
+      <div id="chart-wrapper">
+        <canvas id="favoriteCat" width="600" height="400"></canvas>
+      </div>
+    </div>
   <script src="app.js"></script>
   </body>
 </html>

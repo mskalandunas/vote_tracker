@@ -1,0 +1,40 @@
+@import url('http://fonts.googleapis.com/css?family=Crafty+Girls');
+
+body {
+  background-color: #8ce8cc;
+}
+
+#chart-wrapper {
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+  color: #ffffff;
+}
+
+img {
+  border-style: solid;
+  border-width: 0px;
+  border-radius: 250px;
+}
+
+#content-wrapper {
+  margin-top: 5%;
+  font-family: Crafty Girls;
+}
+
+#pic-container {
+  margin: 0 auto;
+  width: 50%;
+}
+
+#pic-container-1 {
+  display: inline-block;
+  float: left;
+}
+
+#pic-container-2 {
+  display: inline-block;
+  float: right;
+}
