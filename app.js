@@ -1,3 +1,8 @@
+//cat obj array
+var catArr = [];
+//cat votes array
+var catTotal = [];
+
 // Array of cat pics
 var arr = [
   '01.jpg',
@@ -54,21 +59,31 @@ var myFunc = function() {
   document.getElementById('pic-container-1').innerHTML = 'TEST TEXT';
 }
 
-//
-//
 // Cat Constructor
-// var myArr = [];
+var cat = function(pic, total) {
+  this.pic = pic;
+  this.total = total;
 
-// var photo = function(file, voteTotal) {
-//   this.file = file;
-//   this.voteTotal = voteTotal;
+  catArr.push(pic);
+  picTotal.push(total);
+}
 
-//   myArray.push(this.file);
+var cat01 = new cat('img/01.jpg', 0);
+var cat02 = new cat('img/02.jpg', 0);
+var cat03 = new cat('img/03.jpg', 0);
+var cat04 = new cat('img/04.jpg', 0);
+var cat05 = new cat('img/05.jpg', 0);
+var cat06 = new cat('img/06.jpg', 0);
+var cat07 = new cat('img/07.jpg', 0);
+var cat08 = new cat('img/08.jpg', 0);
+var cat09 = new cat('img/09.jpg', 0);
+var cat10 = new cat('img/10.jpg', 0);
+var cat11 = new cat('img/11.jpg', 0);
+var cat12 = new cat('img/12.jpg', 0);
+var cat13 = new cat('img/13.jpg', 0);
+var cat14 = new cat('img/14.jpg', 0);
 
-// }
-//
-//
-//
+console.log(cat01);
 
 //Vote Listener
 
