@@ -49,28 +49,81 @@ function catPic2() {
 catPic1()
 catPic2()
 
-// Event listeners
-// document.getElementById("pic-container-1").addEventListener("click", showInput);
-// document.getElementById("pic-container-2").addEventListener("click", showInput);
+//
+//
+// Cat Constructor
+// var myArr = [];
+
+// var photo = function(file, voteTotal) {
+//   this.file = file;
+//   this.voteTotal = voteTotal;
+
+//   myArray.push(this.file);
+
+// }
+//
+//
+//
+
+//Vote Listener
 
 //Pie chart shell
-
 var pieData = [
   {
-    value: 20,
-    color:"#878BB6"
+    value: 6,
+    color: "#878BB6"
   },
   {
-    value : 40,
-    color : "#4ACAB4"
+    value: 14,
+    color: "#4ACAB4"
   },
   {
-    value : 10,
-    color : "#FF8153"
+    value: 15,
+    color: "#8ce8cc"
   },
   {
-    value : 30,
-    color : "#FFEA88"
+    value: 4,
+    color: "#8DFFFF"
+  },
+  {
+    value: 11,
+    color: "#FF66A3"
+  },
+  {
+    value: 5,
+    color: "#66FF99"
+  },
+  {
+    value: 6,
+    color: "#85A3FF"
+  },
+  {
+    value: 2,
+    color: "#DBDB4D"
+  },
+  {
+    value: 11,
+    color: "#66FFCC"
+  },
+  {
+    value: 9,
+    color: "#FF99CC"
+  },
+  {
+    value: 8,
+    color: "#FF3333"
+  },
+  {
+    value: 4,
+    color: "#9999FF"
+  },
+  {
+    value: 13,
+    color: "#FF6600"
+  },
+  {
+    value: 6,
+    color: "#FFCC99"
   }
 ];
 
@@ -81,3 +134,4 @@ var pieOptions = {
 
 var favoriteCat = document.getElementById("favoriteCat").getContext("2d");
 new Chart(favoriteCat).Pie(pieData, pieOptions);
+//Pie end
