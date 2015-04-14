@@ -3,23 +3,27 @@
 <link rel="stylesheet" type="text/css" href="style.css">
   <head>
     <meta charset="UTF-8">
-    <title>Cutest Kitten Pagent</title>
+    <title>Hot or not: Cats</title>
     <script src="Chart.min.js"></script>
   </head>
   <body>
     <div class="container" id="content-wrapper">
-      <h2>Vote on your favorite cat photo!</h2>
+      <div id="header">
+        <h1>Better cat???????</h1>
+      </div>
       <br>
       <br>
       <br>
       <div id="pic-container">
-        <div id="pic-container-1"></div>
-        <div id="pic-container-2"></div>
-      </div>
-      <div id="chart-wrapper">
-        <canvas id="favoriteCat" width="600" height="400"></canvas>
+        <div class="btn" id="pic-container-1" value="00" onClick=myFunc()></div>
+        <div class="btn" id="pic-container-2" value="01" onClick=myFunc()></div>
       </div>
     </div>
+    <div id="chart-wrapper">
+      <canvas id="favoriteCat" width="600" height="400"></canvas>
+    </div>
+    <div id="button-wrapper">
+      <button type="reset">Change cats!</button>
   <script src="app.js"></script>
   </body>
 </html>

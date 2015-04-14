@@ -49,6 +49,11 @@ function catPic2() {
 catPic1()
 catPic2()
 
+//listener for click
+var myFunc = function() {
+  document.getElementById('pic-container-1').innerHTML = 'TEST TEXT';
+}
+
 //
 //
 // Cat Constructor
