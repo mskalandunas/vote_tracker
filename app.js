@@ -73,7 +73,7 @@ var myFunc = function() {
 //Vote Listener
 
 //Pie chart shell
-var pieData = [
+var polarData = [
   {
     value: 6,
     color: "#878BB6"
@@ -132,11 +132,11 @@ var pieData = [
   }
 ];
 
-var pieOptions = {
+var polarOptions = {
   segmentShowStroke : false,
   animateScale : true
 }
 
 var favoriteCat = document.getElementById("favoriteCat").getContext("2d");
-new Chart(favoriteCat).Pie(pieData, pieOptions);
+new Chart(favoriteCat).PolarArea(polarData, polarOptions);
 //Pie end
