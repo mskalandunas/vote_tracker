@@ -3,26 +3,27 @@
 // })();
 
 // Cat constructor
-var Cat = function(pic, total) {
+var Cat = function(pic, total, segment) {
   this.pic = pic;
   this.total = total;
+  this.segment = segment;
 }
 
 // Creates cat objects
-var Cat01 = new Cat('img/01.jpg', 11); //test values
-var Cat02 = new Cat('img/02.jpg', 3);
-var Cat03 = new Cat('img/03.jpg', 13);
-var Cat04 = new Cat('img/04.jpg', 11);
-var Cat05 = new Cat('img/05.jpg', 14);
-var Cat06 = new Cat('img/06.jpg', 6);
-var Cat07 = new Cat('img/07.jpg', 10);
-var Cat08 = new Cat('img/08.jpg', 8);
-var Cat09 = new Cat('img/09.jpg', 9);
-var Cat10 = new Cat('img/10.jpg', 12);
-var Cat11 = new Cat('img/11.jpg', 13);
-var Cat12 = new Cat('img/12.jpg', 2);
-var Cat13 = new Cat('img/13.jpg', 4);
-var Cat14 = new Cat('img/14.jpg', 5);
+var Cat01 = new Cat('img/01.jpg', 3, 0); //test values
+var Cat02 = new Cat('img/02.jpg', 3, 1);
+var Cat03 = new Cat('img/03.jpg', 3, 2);
+var Cat04 = new Cat('img/04.jpg', 3, 3);
+var Cat05 = new Cat('img/05.jpg', 3, 4);
+var Cat06 = new Cat('img/06.jpg', 3, 5);
+var Cat07 = new Cat('img/07.jpg', 3, 6);
+var Cat08 = new Cat('img/08.jpg', 3, 7);
+var Cat09 = new Cat('img/09.jpg', 3, 8);
+var Cat10 = new Cat('img/10.jpg', 3, 9);
+var Cat11 = new Cat('img/11.jpg', 3, 10);
+var Cat12 = new Cat('img/12.jpg', 3, 11);
+var Cat13 = new Cat('img/13.jpg', 3, 12);
+var Cat14 = new Cat('img/14.jpg', 3, 13);
 
 var catArr = [
   Cat01,
@@ -82,26 +83,30 @@ catPic2();
 // Did it work?
 console.log(catArr[0]);
 console.log(catArr[1]);
+console.log(catArr[0].segment);
 
 // Add vote
 var addVoteOne = function() {
   catArr[0].total += 1;
-  new Chart(favoriteCat).PolarArea(polarData, polarOptions);
+  // need to find a way to assign Cat objects to segments - new property segment
+  myNewChart.segments[catArr[0].segment].value = catArr[0].total;
   shuffle(catArr);
   document.getElementById('pic-container-1').innerHTML = '<img src=' + catArr[0].pic; + '>'
   document.getElementById('pic-container-2').innerHTML = '<img src=' + catArr[1].pic; + '>'
   catPic1();
   catPic2();
+  myNewChart.update();
 }
 
 var addVoteTwo = function() {
   catArr[1].total += 1;
-  new Chart(favoriteCat).PolarArea(polarData, polarOptions);
+  myNewChart.segments[catArr[1].segment].value = catArr[1].total;
   shuffle(catArr);
   document.getElementById('pic-container-1').innerHTML = '<img src=' + catArr[0].pic; + '>'
   document.getElementById('pic-container-2').innerHTML = '<img src=' + catArr[1].pic; + '>'
   catPic1();
   catPic2();
+  myNewChart.update();
 }
 
 // Polar area chart
@@ -179,10 +184,13 @@ var polarData = [
 ];
 
 var polarOptions = {
-  segmentShowStroke: false,
-  animateScale: true
+  segmentShowStroke: true,
+  animateScale: true,
+  animateRotate: false
+
 }
 
 var favoriteCat = document.getElementById("favoriteCat").getContext("2d");
-new Chart(favoriteCat).PolarArea(polarData, polarOptions);
+var myNewChart = new Chart(favoriteCat).PolarArea(polarData, polarOptions);
+console.log(myNewChart);
 //polar end
