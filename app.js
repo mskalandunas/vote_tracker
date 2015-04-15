@@ -1,3 +1,7 @@
+// (function($) {
+//   $('#header').append('<h3>You must decide!</h3>');
+// })();
+
 // Cat obj array
 var catArr = [];
 // Cat total votes array
@@ -49,6 +53,9 @@ function shuffle(array) {
 
 console.log(catArr);
 shuffle(catArr);
+
+// jQuery attempt
+// $('#pic-container-1').append("<img src='carArr[0]'/>");
 
 // Appends cat pic to body element
 function catPic1() {
