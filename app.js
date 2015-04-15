@@ -1,9 +1,9 @@
-//cat obj array
+// Cat obj array
 var catArr = [];
-//cat votes array
+// Cat votes array
 var catTotal = [];
 
-// Cat Constructor
+// Cat constructor
 var cat = function(pic, total) {
   this.pic = pic;
   this.total = total;
@@ -12,6 +12,7 @@ var cat = function(pic, total) {
   catTotal.push(total);
 }
 
+// Creates cat objects
 var cat01 = new cat('img/01.jpg', 0);
 var cat02 = new cat('img/02.jpg', 0);
 var cat03 = new cat('img/03.jpg', 0);
@@ -26,8 +27,6 @@ var cat11 = new cat('img/11.jpg', 0);
 var cat12 = new cat('img/12.jpg', 0);
 var cat13 = new cat('img/13.jpg', 0);
 var cat14 = new cat('img/14.jpg', 0);
-
-console.log(catArr);
 
 // Shuffles order of cat pic array (Knuth shuffle)
 function shuffle(array) {
@@ -63,8 +62,8 @@ function catPic2() {
 catPic1()
 catPic2()
 
-// //listener for click
-// var myFunc = function() {
+// Add vote
+// var addVote = function() {
 //   document.getElementById('pic-container-1').innerHTML = 'TEST TEXT';
 // }
 
