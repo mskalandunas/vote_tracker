@@ -87,11 +87,21 @@ console.log(catArr[1]);
 var addVoteOne = function() {
   catArr[0].total += 1;
   new Chart(favoriteCat).PolarArea(polarData, polarOptions);
+  shuffle(catArr);
+  document.getElementById('pic-container-1').innerHTML = '<img src=' + catArr[0].pic; + '>'
+  document.getElementById('pic-container-2').innerHTML = '<img src=' + catArr[1].pic; + '>'
+  catPic1();
+  catPic2();
 }
 
 var addVoteTwo = function() {
   catArr[1].total += 1;
   new Chart(favoriteCat).PolarArea(polarData, polarOptions);
+  shuffle(catArr);
+  document.getElementById('pic-container-1').innerHTML = '<img src=' + catArr[0].pic; + '>'
+  document.getElementById('pic-container-2').innerHTML = '<img src=' + catArr[1].pic; + '>'
+  catPic1();
+  catPic2();
 }
 
 // Polar area chart
