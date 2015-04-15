@@ -2,20 +2,10 @@
   // $('#header').append('<h3>You must decide!</h3>');
 // })();
 
-// Cat obj array
-var catArr = [];
-// Cat total votes array
-var catTotal = [];
-// Cat photo name
-var catName = [];
-
 // Cat constructor
 var Cat = function(pic, total) {
   this.pic = pic;
   this.total = total;
-
-  catArr.push(pic);
-  catTotal.push(total);
 }
 
 // Creates cat objects
@@ -33,6 +23,23 @@ var Cat11 = new Cat('img/11.jpg', 13);
 var Cat12 = new Cat('img/12.jpg', 2);
 var Cat13 = new Cat('img/13.jpg', 4);
 var Cat14 = new Cat('img/14.jpg', 5);
+
+var catArr = [
+  Cat01,
+  Cat02,
+  Cat03,
+  Cat04,
+  Cat05,
+  Cat06,
+  Cat07,
+  Cat08,
+  Cat09,
+  Cat10,
+  Cat11,
+  Cat12,
+  Cat13,
+  Cat14
+]
 
 // Shuffles order of cat pic array (Knuth shuffle)
 function shuffle(array) {
@@ -59,13 +66,13 @@ console.log(catArr);
 // Appends cat pic to body element
 function catPic1() {
   var img = document.createElement('img');
-  img.src = catArr[0]
+  img.src = catArr[0].pic;
   document.getElementById('pic-container-1').appendChild(img);
 }
 
 function catPic2() {
   var img = document.createElement('img');
-  img.src = catArr[1]
+  img.src = catArr[1].pic;
   document.getElementById('pic-container-2').appendChild(img);
 }
 
@@ -75,20 +82,16 @@ catPic2();
 // Did it work?
 console.log(catArr[0]);
 console.log(catArr[1]);
-// catArr WORKS - catTotal DOES NOT WORK
-
-console.log(catTotal[0]);
-console.log(catTotal[1]);
 
 // Add vote
 var addVoteOne = function() {
-  catTotal[0] += 1;
+  catArr[0].total += 1;
   new Chart(favoriteCat).PolarArea(polarData, polarOptions);
 }
 
 var addVoteTwo = function() {
-  catTotal[1] += 1;
-  favoriteCat.update();
+  catArr[1].total += 1;
+  new Chart(favoriteCat).PolarArea(polarData, polarOptions);
 }
 
 // Polar area chart
