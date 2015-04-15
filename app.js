@@ -17,20 +17,20 @@ var Cat = function(pic, total, cat) {
 }
 
 // Creates cat objects
-var Cat01 = new Cat('img/01.jpg', 1, 'Cat 01'); //test values
-var Cat02 = new Cat('img/02.jpg', 2, 'Cat 02');
-var Cat03 = new Cat('img/03.jpg', 3, 'Cat 03');
-var Cat04 = new Cat('img/04.jpg', 4, 'Cat 04');
-var Cat05 = new Cat('img/05.jpg', 5, 'Cat 05');
+var Cat01 = new Cat('img/01.jpg', 11, 'Cat 01'); //test values
+var Cat02 = new Cat('img/02.jpg', 3, 'Cat 02');
+var Cat03 = new Cat('img/03.jpg', 13, 'Cat 03');
+var Cat04 = new Cat('img/04.jpg', 11, 'Cat 04');
+var Cat05 = new Cat('img/05.jpg', 14, 'Cat 05');
 var Cat06 = new Cat('img/06.jpg', 6, 'Cat 06');
-var Cat07 = new Cat('img/07.jpg', 7, 'Cat 07');
+var Cat07 = new Cat('img/07.jpg', 10, 'Cat 07');
 var Cat08 = new Cat('img/08.jpg', 8, 'Cat 08');
 var Cat09 = new Cat('img/09.jpg', 9, 'Cat 09');
-var Cat10 = new Cat('img/10.jpg', 10, 'Cat 10');
-var Cat11 = new Cat('img/11.jpg', 11, 'Cat 11');
-var Cat12 = new Cat('img/12.jpg', 12, 'Cat 12');
-var Cat13 = new Cat('img/13.jpg', 13, 'Cat 13');
-var Cat14 = new Cat('img/14.jpg', 14, 'Cat 14');
+var Cat10 = new Cat('img/10.jpg', 12, 'Cat 10');
+var Cat11 = new Cat('img/11.jpg', 13, 'Cat 11');
+var Cat12 = new Cat('img/12.jpg', 2, 'Cat 12');
+var Cat13 = new Cat('img/13.jpg', 4, 'Cat 13');
+var Cat14 = new Cat('img/14.jpg', 5, 'Cat 14');
 
 // Shuffles order of cat pic array (Knuth shuffle)
 function shuffle(array) {
@@ -72,11 +72,11 @@ console.log(Cat02.total);
 console.log(catTotal);
 console.log(catName);
 
-// Add vote
-var addVote = function() {
-  // document.getElementById('pic-container-1').innerHTML = 'TEST TEXT';
-  this.total + 1
-}
+// // Add vote
+// var addVote = function() {
+//   // document.getElementById('pic-container-1').innerHTML = 'TEST TEXT';
+//   catArr.total + 1;
+// }
 
 // Polar area chart
 var polarData = [
