@@ -1,3 +1,4 @@
+// jquery header addition
 jQuery('#header').append('<h3>You must decide!</h3>');
 
 // Cat constructor
@@ -51,7 +52,6 @@ function shuffle(array) {
     array[currentIndex] = array[randomIndex];
     array[randomIndex] = temporaryValue;
   }
-
   return array;
 }
 
@@ -174,10 +174,8 @@ var polarOptions = {
   segmentShowStroke: true,
   animateScale: true,
   animateRotate: false
-
 }
 
 var favoriteCat = document.getElementById("favoriteCat").getContext("2d");
 var myNewChart = new Chart(favoriteCat).PolarArea(polarData, polarOptions);
-console.log(myNewChart);
 //polar end
