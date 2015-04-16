@@ -1,36 +1,44 @@
-// Cat obj array
-var catArr = [];
-// Cat total votes array
-var catTotal = [];
-// Cat photo name
-var catName = [];
+jQuery('#header').append('<h3>You must decide!</h3>');
 
 // Cat constructor
-var Cat = function(pic, total, cat) {
+var Cat = function(pic, total, segment) {
   this.pic = pic;
   this.total = total;
-  this.cat = cat;
-
-  catArr.push(pic);
-  catTotal.push(total);
-  catName.push(cat);
+  this.segment = segment;
 }
 
 // Creates cat objects
-var Cat01 = new Cat('img/01.jpg', 11, 'Cat 01'); //test values
-var Cat02 = new Cat('img/02.jpg', 3, 'Cat 02');
-var Cat03 = new Cat('img/03.jpg', 13, 'Cat 03');
-var Cat04 = new Cat('img/04.jpg', 11, 'Cat 04');
-var Cat05 = new Cat('img/05.jpg', 14, 'Cat 05');
-var Cat06 = new Cat('img/06.jpg', 6, 'Cat 06');
-var Cat07 = new Cat('img/07.jpg', 10, 'Cat 07');
-var Cat08 = new Cat('img/08.jpg', 8, 'Cat 08');
-var Cat09 = new Cat('img/09.jpg', 9, 'Cat 09');
-var Cat10 = new Cat('img/10.jpg', 12, 'Cat 10');
-var Cat11 = new Cat('img/11.jpg', 13, 'Cat 11');
-var Cat12 = new Cat('img/12.jpg', 2, 'Cat 12');
-var Cat13 = new Cat('img/13.jpg', 4, 'Cat 13');
-var Cat14 = new Cat('img/14.jpg', 5, 'Cat 14');
+var Cat01 = new Cat('img/01.jpg', 0, 0); //test values
+var Cat02 = new Cat('img/02.jpg', 0, 1);
+var Cat03 = new Cat('img/03.jpg', 0, 2);
+var Cat04 = new Cat('img/04.jpg', 0, 3);
+var Cat05 = new Cat('img/05.jpg', 0, 4);
+var Cat06 = new Cat('img/06.jpg', 0, 5);
+var Cat07 = new Cat('img/07.jpg', 0, 6);
+var Cat08 = new Cat('img/08.jpg', 0, 7);
+var Cat09 = new Cat('img/09.jpg', 0, 8);
+var Cat10 = new Cat('img/10.jpg', 0, 9);
+var Cat11 = new Cat('img/11.jpg', 0, 10);
+var Cat12 = new Cat('img/12.jpg', 0, 11);
+var Cat13 = new Cat('img/13.jpg', 0, 12);
+var Cat14 = new Cat('img/14.jpg', 0, 13);
+
+var catArr = [
+  Cat01,
+  Cat02,
+  Cat03,
+  Cat04,
+  Cat05,
+  Cat06,
+  Cat07,
+  Cat08,
+  Cat09,
+  Cat10,
+  Cat11,
+  Cat12,
+  Cat13,
+  Cat14
+]
 
 // Shuffles order of cat pic array (Knuth shuffle)
 function shuffle(array) {
@@ -47,36 +55,46 @@ function shuffle(array) {
   return array;
 }
 
-console.log(catArr);
 shuffle(catArr);
 
 // Appends cat pic to body element
 function catPic1() {
   var img = document.createElement('img');
-  img.src = catArr[0]
+  img.src = catArr[0].pic;
   document.getElementById('pic-container-1').appendChild(img);
 }
 
 function catPic2() {
   var img = document.createElement('img');
-  img.src = catArr[1]
+  img.src = catArr[1].pic;
   document.getElementById('pic-container-2').appendChild(img);
 }
 
 catPic1();
 catPic2();
 
-console.log(Cat01);
-console.log(Cat01.total);
-console.log(Cat02.total);
-console.log(catTotal);
-console.log(catName);
+// Add vote
+var addVoteOne = function() {
+  catArr[0].total += 1;
+  myNewChart.segments[catArr[0].segment].value = catArr[0].total;
+  shuffle(catArr);
+  document.getElementById('pic-container-1').innerHTML = '<img src=' + catArr[0].pic; + '>'
+  document.getElementById('pic-container-2').innerHTML = '<img src=' + catArr[1].pic; + '>'
+  catPic1();
+  catPic2();
+  myNewChart.update();
+}
 
-// // Add vote
-// var addVote = function() {
-//   // document.getElementById('pic-container-1').innerHTML = 'TEST TEXT';
-//   catArr.total + 1;
-// }
+var addVoteTwo = function() {
+  catArr[1].total += 1;
+  myNewChart.segments[catArr[1].segment].value = catArr[1].total;
+  shuffle(catArr);
+  document.getElementById('pic-container-1').innerHTML = '<img src=' + catArr[0].pic; + '>'
+  document.getElementById('pic-container-2').innerHTML = '<img src=' + catArr[1].pic; + '>'
+  catPic1();
+  catPic2();
+  myNewChart.update();
+}
 
 // Polar area chart
 var polarData = [
@@ -153,10 +171,13 @@ var polarData = [
 ];
 
 var polarOptions = {
-  segmentShowStroke : false,
-  animateScale : true
+  segmentShowStroke: true,
+  animateScale: true,
+  animateRotate: false
+
 }
 
 var favoriteCat = document.getElementById("favoriteCat").getContext("2d");
-new Chart(favoriteCat).PolarArea(polarData, polarOptions);
+var myNewChart = new Chart(favoriteCat).PolarArea(polarData, polarOptions);
+console.log(myNewChart);
 //polar end
