@@ -1,6 +1,4 @@
-// (function($) {
-  // $('#header').append('<h3>You must decide!</h3>');
-// })();
+jQuery('#header').append('<h3>You must decide!</h3>');
 
 // Cat constructor
 var Cat = function(pic, total, segment) {
@@ -10,20 +8,20 @@ var Cat = function(pic, total, segment) {
 }
 
 // Creates cat objects
-var Cat01 = new Cat('img/01.jpg', 3, 0); //test values
-var Cat02 = new Cat('img/02.jpg', 3, 1);
-var Cat03 = new Cat('img/03.jpg', 3, 2);
-var Cat04 = new Cat('img/04.jpg', 3, 3);
-var Cat05 = new Cat('img/05.jpg', 3, 4);
-var Cat06 = new Cat('img/06.jpg', 3, 5);
-var Cat07 = new Cat('img/07.jpg', 3, 6);
-var Cat08 = new Cat('img/08.jpg', 3, 7);
-var Cat09 = new Cat('img/09.jpg', 3, 8);
-var Cat10 = new Cat('img/10.jpg', 3, 9);
-var Cat11 = new Cat('img/11.jpg', 3, 10);
-var Cat12 = new Cat('img/12.jpg', 3, 11);
-var Cat13 = new Cat('img/13.jpg', 3, 12);
-var Cat14 = new Cat('img/14.jpg', 3, 13);
+var Cat01 = new Cat('img/01.jpg', 0, 0); //test values
+var Cat02 = new Cat('img/02.jpg', 0, 1);
+var Cat03 = new Cat('img/03.jpg', 0, 2);
+var Cat04 = new Cat('img/04.jpg', 0, 3);
+var Cat05 = new Cat('img/05.jpg', 0, 4);
+var Cat06 = new Cat('img/06.jpg', 0, 5);
+var Cat07 = new Cat('img/07.jpg', 0, 6);
+var Cat08 = new Cat('img/08.jpg', 0, 7);
+var Cat09 = new Cat('img/09.jpg', 0, 8);
+var Cat10 = new Cat('img/10.jpg', 0, 9);
+var Cat11 = new Cat('img/11.jpg', 0, 10);
+var Cat12 = new Cat('img/12.jpg', 0, 11);
+var Cat13 = new Cat('img/13.jpg', 0, 12);
+var Cat14 = new Cat('img/14.jpg', 0, 13);
 
 var catArr = [
   Cat01,
@@ -57,12 +55,7 @@ function shuffle(array) {
   return array;
 }
 
-console.log(catArr);
 shuffle(catArr);
-console.log(catArr);
-
-// jQuery attempt
-// $('#pic-container-1').append("<img src='carArr[0]'/>");
 
 // Appends cat pic to body element
 function catPic1() {
@@ -80,15 +73,9 @@ function catPic2() {
 catPic1();
 catPic2();
 
-// Did it work?
-console.log(catArr[0]);
-console.log(catArr[1]);
-console.log(catArr[0].segment);
-
 // Add vote
 var addVoteOne = function() {
   catArr[0].total += 1;
-  // need to find a way to assign Cat objects to segments - new property segment
   myNewChart.segments[catArr[0].segment].value = catArr[0].total;
   shuffle(catArr);
   document.getElementById('pic-container-1').innerHTML = '<img src=' + catArr[0].pic; + '>'
