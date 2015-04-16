@@ -17,14 +17,14 @@ app.get('/img', function(request, response) {
   response.send('<h1>Hello ' + request.params.person + '<h1>');
 });
 
-app.get('/*', function(request, response) {
-  response.status(404).send('ERROR 404 NOT FOUND');
-});
-
 app.get('/secret', function(request, response) {
   response.status(200).send('OHH YOU FOUND ME');
 })
 
-app.listen(3000, function() {
+app.get('/*', function(request, response) {
+  response.status(404).sendFile(__dirname + '/404.html');
+});
+
+app.listen(5000, function() {
   console.log('server running');
 });
