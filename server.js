@@ -26,5 +26,5 @@ app.get('/*', function(request, response) {
 });
 
 app.listen(5000, function() {
-  console.log('server running');
+  console.log('The server is running!');
 });
