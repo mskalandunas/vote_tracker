@@ -1,28 +1,33 @@
-// jquery header addition
 jQuery('#header').append('<h3>You must decide!</h3>');
 
-// Cat constructor
 var Cat = function(pic, total, segment) {
   this.pic = pic;
   this.total = total;
   this.segment = segment;
 }
 
-// Creates cat objects
-var Cat01 = new Cat('img/01.jpg', 0, 0); //test values
-var Cat02 = new Cat('img/02.jpg', 0, 1);
-var Cat03 = new Cat('img/03.jpg', 0, 2);
-var Cat04 = new Cat('img/04.jpg', 0, 3);
-var Cat05 = new Cat('img/05.jpg', 0, 4);
-var Cat06 = new Cat('img/06.jpg', 0, 5);
-var Cat07 = new Cat('img/07.jpg', 0, 6);
-var Cat08 = new Cat('img/08.jpg', 0, 7);
-var Cat09 = new Cat('img/09.jpg', 0, 8);
-var Cat10 = new Cat('img/10.jpg', 0, 9);
-var Cat11 = new Cat('img/11.jpg', 0, 10);
-var Cat12 = new Cat('img/12.jpg', 0, 11);
-var Cat13 = new Cat('img/13.jpg', 0, 12);
-var Cat14 = new Cat('img/14.jpg', 0, 13);
+$.ajax({
+  url: 'https://api.imgur.com/3/album/ixiv0.json',
+  method: 'GET',
+  headers: {
+    'Authorization': 'Client-ID 3efaec9ffe12e73'
+  }
+})
+
+var Cat01 = new Cat("http://i.imgur.com/uY69UMa.jpg", 0, 0);
+var Cat02 = new Cat("http://i.imgur.com/6EMjPNy.jpg", 0, 1);
+var Cat03 = new Cat("http://i.imgur.com/o3aiDEA.jpg", 0, 2);
+var Cat04 = new Cat("http://i.imgur.com/480j15J.jpg", 0, 3);
+var Cat05 = new Cat("http://i.imgur.com/Fk5LMcS.jpg", 0, 4);
+var Cat06 = new Cat("http://i.imgur.com/nAXyJeA.jpg", 0, 5);
+var Cat07 = new Cat("http://i.imgur.com/1rNSoGl.jpg", 0, 6);
+var Cat08 = new Cat("http://i.imgur.com/3aVuxrU.jpg", 0, 7);
+var Cat09 = new Cat("http://i.imgur.com/Je4GkEP.jpg", 0, 8);
+var Cat10 = new Cat("http://i.imgur.com/16aiT5U.jpg", 0, 9);
+var Cat11 = new Cat("http://i.imgur.com/K530RRk.jpg", 0, 10);
+var Cat12 = new Cat("http://i.imgur.com/4LrtDm4.jpg", 0, 11);
+var Cat13 = new Cat("http://i.imgur.com/bObzoC6.jpg", 0, 12);
+var Cat14 = new Cat("http://i.imgur.com/umD0ISC.jpg", 0, 13);
 
 var catArr = [
   Cat01,
@@ -41,7 +46,6 @@ var catArr = [
   Cat14
 ]
 
-// Shuffles order of cat pic array (Knuth shuffle)
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
   while (0 !== currentIndex) {
@@ -57,7 +61,6 @@ function shuffle(array) {
 
 shuffle(catArr);
 
-// Appends cat pic to body element
 function catPic1() {
   var img = document.createElement('img');
   img.src = catArr[0].pic;
@@ -73,7 +76,6 @@ function catPic2() {
 catPic1();
 catPic2();
 
-// Add vote
 var addVoteOne = function() {
   catArr[0].total += 1;
   myNewChart.segments[catArr[0].segment].value = catArr[0].total;
@@ -96,7 +98,6 @@ var addVoteTwo = function() {
   myNewChart.update();
 }
 
-// Polar area chart
 var polarData = [
   {
     label: "Ribbon Cat",
@@ -178,4 +179,3 @@ var polarOptions = {
 
 var favoriteCat = document.getElementById("favoriteCat").getContext("2d");
 var myNewChart = new Chart(favoriteCat).PolarArea(polarData, polarOptions);
-//polar end
