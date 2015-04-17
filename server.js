@@ -4,9 +4,9 @@
 var express = require('express');
 var app = express();
 
+app.set('port', (process.env.PORT || 5000));
+
 app.use(express.static(__dirname + '/'));
-app.use(express.static(__dirname + '/js/'));
-app.use(express.static(__dirname + '/img/'));
 app.use(express.static(__dirname + '/deps/'));
 
 app.get('/', function(request, response) {
@@ -25,6 +25,6 @@ app.get('/*', function(request, response) {
   response.status(404).sendFile(__dirname + '/404.html');
 });
 
-app.listen(5000, function() {
-  console.log('The server is running!');
+app.listen(app.get('port'), function() {
+  console.log("Node app is running at localhost:" + app.get('port'));
 });
