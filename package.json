@@ -1,0 +1,24 @@
+{
+  "name": "vote_tracker",
+  "version": "1.0.0",
+  "description": "cat vote tracker",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.12.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mskalandunas/vote_tracker.git"
+  },
+  "author": "Mike Skalandunas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mskalandunas/vote_tracker/issues"
+  },
+  "homepage": "https://github.com/mskalandunas/vote_tracker"
+}
