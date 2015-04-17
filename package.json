@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "cat vote tracker",
   "main": "app.js",
+  "engines": {
+    "node": "0.12.2",
   "dependencies": {
     "express": "^4.12.3"
   },
