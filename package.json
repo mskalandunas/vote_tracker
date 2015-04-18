@@ -1,26 +1,20 @@
 {
-  "name": "vote_tracker",
-  "version": "1.0.0",
-  "description": "cat vote tracker",
-  "main": "app.js",
-  "engines": {
-    "node": "0.12.2",
-  "dependencies": {
-    "express": "^4.12.3"
-  },
-  "devDependencies": {},
+  "name": "battle_cats",
+  "version": "0.1.0",
+  "description": "Who's the cutest kitten?",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "~4.9.x"
+  },
+  "engines": {
+    "node": "0.12.2"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mskalandunas/vote_tracker.git"
+    "url": "https://github.com/mskalandunas/vote_tracker"
   },
-  "author": "Mike Skalandunas",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mskalandunas/vote_tracker/issues"
-  },
-  "homepage": "https://github.com/mskalandunas/vote_tracker"
+  "license": "MIT"
 }
