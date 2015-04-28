@@ -5,3 +5,11 @@ $.ajax({
     'Authorization': 'Client-ID 3efaec9ffe12e73'
   }
 })
+
+.done(function(res) {
+  console.log("Images were properly loaded.")
+})
+
+.fail(function(err) {
+  console.log("Images were not properly loaded.");
+});
