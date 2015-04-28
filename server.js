@@ -4,7 +4,6 @@ var app = express();
 app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/public/'));
-app.use(express.static(__dirname + '/public/deps/'));
 
 app.get('/secret', function(request, response) {
   response.status(200).send('OHH YOU FOUND ME');
