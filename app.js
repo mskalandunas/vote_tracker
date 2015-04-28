@@ -1,18 +1,8 @@
-jQuery('#header').append('<h3>You must decide!!!</h3>');
-
 var Cat = function(pic, total, segment) {
   this.pic = pic;
   this.total = total;
   this.segment = segment;
 }
-
-$.ajax({
-  url: 'https://api.imgur.com/3/album/ixiv0.json',
-  method: 'GET',
-  headers: {
-    'Authorization': 'Client-ID 3efaec9ffe12e73'
-  }
-})
 
 var Cat01 = new Cat("http://i.imgur.com/uY69UMa.jpg", 0, 0);
 var Cat02 = new Cat("http://i.imgur.com/6EMjPNy.jpg", 0, 1);
