@@ -1,5 +1,3 @@
-jQuery('#header').append('<h3>You must decide!!!</h3>');
-
 var Cat = function(pic, total, segment) {
   this.pic = pic;
   this.total = total;
